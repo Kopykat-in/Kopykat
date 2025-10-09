@@ -1,4 +1,4 @@
-![screenshot]([https://github.com/Kopykat-in/Kopykat/main/Readmeimage.png])
+![screenshot](https://raw.githubusercontent.com/Kopykat-in/Kopykat/main/assets/Readmeimage.png)
 
 # Kopykat
 
@@ -17,7 +17,7 @@ Interested in growing this universe of UI components? Contribution is simple:
 1. **Create & Submit**: Craft your unique UI element and submit it to [kopykat.in](https://kopykat.in/).
 2. **Approval**: Once your submission is reviewed and approved on our platform, it will automatically be uploaded to this repo.
 
-**Please note**: Direct contributions or pull requests to this repository will be ignored. The `kopykat` is exclusively managed through the [Uiverse.io](http://kopykat.in/) platform to ensure consistency and quality.
+**Please note**: Direct contributions or pull requests to this repository will be ignored. The `kopykat` is exclusively managed through the [kopykat.in](http://kopykat.in/) platform to ensure consistency and quality.
 
 ## Licensing and Attribution
 
