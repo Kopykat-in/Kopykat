@@ -1,0 +1,86 @@
+<!-- ***Created by Uiking 002 - KopyKat Powered by Fnext*** -->
+
+<button class="aurora-flux">Hover me!</button>
+
+<style>
+
+.aurora-flux {
+  --border-radius: 18px;
+  --border-width: 4px;
+  appearance: none;
+  position: relative;
+  padding: 1em 2.5em;
+  border: 0;
+  background-color: #121212;
+  font-family: "Poppins", "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: var(--border-radius);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 20px #000;
+  overflow: hidden;
+}
+
+.aurora-flux::after {
+  --m-i: linear-gradient(#000, #000);
+  --m-o: content-box, padding-box;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: var(--border-width);
+  border-radius: var(--border-radius);
+  background-image: conic-gradient(
+    #00f5ff,
+    #00ffa3,
+    #ffeb3b,
+    #ff6f00,
+    #ff0099,
+    #7c4dff,
+    #00f5ff
+  );
+  -webkit-mask-image: var(--m-i), var(--m-i);
+  mask-image: var(--m-i), var(--m-i);
+  -webkit-mask-origin: var(--m-o);
+  mask-origin: var(--m-o);
+  /* -webkit-mask-clip: var(--m-o); (Remove comment when using) */
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  filter: hue-rotate(0);
+  animation: aurora-spin 1.5s linear infinite;
+  animation-play-state: paused;
+  opacity: 0.8;
+}
+
+.aurora-flux:hover::after {
+  animation-play-state: running;
+  opacity: 1;
+}
+
+.aurora-flux:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 30px 8px #00ffa340, 0 0 50px 15px #7c4dff20;
+}
+
+.aurora-flux:active {
+  transform: scale(0.96);
+  --border-width: 6px;
+}
+
+@keyframes aurora-spin {
+  to {
+    filter: hue-rotate(1turn);
+  }
+}
+
+.aurora-flux,
+.aurora-flux::after {
+  box-sizing: border-box;
+}
+</style>

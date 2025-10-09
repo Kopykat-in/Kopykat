@@ -1,0 +1,47 @@
+<!-- ***Created by Uiking 002 - KopyKat Powered by Fnext*** -->
+
+<button class="glow-button">
+  Hover Me
+</button>
+
+<style>
+.glow-button {
+  position: relative;
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glow-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: transform 0.5s ease;
+}
+
+.glow-button:hover::before {
+  left: 100%;
+  transition: left 0.8s ease;
+}
+
+.glow-button:hover {
+  box-shadow: 0 0 20px #0072ff70, 0 0 40px #00c6ff40;
+  transform: translateY(-2px);
+}
+
+.glow-button:active {
+  transform: scale(0.95);
+}
+</style>
