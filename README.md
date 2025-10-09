@@ -1,4 +1,4 @@
-![screenshot]([https://raw.githubusercontent.com/uiverse-io/.github/main/cover.png](https://github.com/Kopykat-in/Kopykat/blob/main/Readmeimage.png))
+![screenshot]([https://github.com/Kopykat-in/Kopykat/blob/main/Readmeimage.png])
 
 # Kopykat
 
