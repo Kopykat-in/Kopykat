@@ -1,4 +1,4 @@
-![screenshot]([https://github.com/Kopykat-in/Kopykat/blob/main/Readmeimage.png])
+![screenshot]([https://github.com/Kopykat-in/Kopykat/main/Readmeimage.png])
 
 # Kopykat
 
