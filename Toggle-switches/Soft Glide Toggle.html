@@ -1,0 +1,63 @@
+<!-- ***Created by Uiking 002 - KopyKat Powered by Fnext*** -->
+
+<div class="bauble_box">
+  <input class="bauble_input" id="bauble_check" name="bauble" type="checkbox">
+  <label class="bauble_label" for="bauble_check"></label>
+</div>
+
+<style>
+
+.bauble_box {
+  display: inline-block;
+}
+
+/* Base toggle track */
+.bauble_box .bauble_label {
+  position: relative;
+  display: inline-block;
+  width: 90px;
+  height: 42px;
+  border-radius: 50px;
+  background: linear-gradient(180deg, #e0e0e0, #c8c8c8);
+  box-shadow: inset 2px 2px 5px rgba(255,255,255,0.6),
+              inset -2px -2px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+/* Knob (the bauble) */
+.bauble_box .bauble_label::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ffffff, #d8d8d8);
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.2),
+              -2px -2px 4px rgba(255,255,255,0.7);
+  transition: all 0.35s ease;
+}
+
+/* Hide the checkbox itself */
+.bauble_box .bauble_input {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Checked state */
+.bauble_box .bauble_input:checked + .bauble_label {
+  background: linear-gradient(180deg, #8bc34a, #689f38);
+  box-shadow: inset 2px 2px 5px rgba(255,255,255,0.4),
+              inset -2px -2px 8px rgba(0,0,0,0.25);
+}
+
+.bauble_box .bauble_input:checked + .bauble_label::before {
+  left: calc(100% - 36px);
+  background: linear-gradient(145deg, #ffffff, #e8ffe0);
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.2),
+              -2px -2px 4px rgba(255,255,255,0.7);
+}
+</style>

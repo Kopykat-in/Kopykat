@@ -1,0 +1,64 @@
+<!-- ***Created by Uiking 002 - KopyKat Powered by Fnext*** -->
+
+<div class="grid-loader">
+  <div class="grid-dot"></div>
+  <div class="grid-dot"></div>
+  <div class="grid-dot"></div>
+  <div class="grid-dot"></div>
+  <div class="grid-dot"></div>
+  <div class="grid-dot"></div>
+  <div class="grid-dot"></div>
+  <div class="grid-dot"></div>
+  <div class="grid-dot"></div>
+</div>
+
+<style>
+
+.grid-loader {
+  display: grid;
+  grid-template-columns: repeat(3, 20px);
+  grid-template-rows: repeat(3, 20px);
+  gap: 10px;
+}
+
+.grid-dot {
+  width: 20px;
+  height: 20px;
+  background-color: #7b2cbf;
+  border-radius: 50%;
+  animation: pulse-grid 1.2s ease-in-out infinite;
+}
+
+/* --- Animation Delays for Wave Effect --- */
+/* Center dot */
+.grid-dot:nth-child(5) {
+  animation-delay: 0s;
+}
+
+/* Middle dots */
+.grid-dot:nth-child(2),
+.grid-dot:nth-child(4),
+.grid-dot:nth-child(6),
+.grid-dot:nth-child(8) {
+  animation-delay: 0.15s;
+}
+
+/* Corner dots */
+.grid-dot:nth-child(1),
+.grid-dot:nth-child(3),
+.grid-dot:nth-child(7),
+.grid-dot:nth-child(9) {
+  animation-delay: 0.3s;
+}
+
+@keyframes pulse-grid {
+  0%, 100% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+</style>

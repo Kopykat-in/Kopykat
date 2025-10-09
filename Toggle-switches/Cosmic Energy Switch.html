@@ -1,0 +1,124 @@
+<!-- ***Created by Uiking 002 - KopyKat Powered by Fnext*** -->
+
+<div class="cosmic-toggle-box">
+  <input type="checkbox" id="cosmic-toggle" class="cosmic-toggle-input" />
+  <label for="cosmic-toggle" class="cosmic-toggle">
+    <span class="toggle-orb"></span>
+    <span class="toggle-glow"></span>
+  </label>
+</div>
+
+<style>
+
+/* --- Base setup --- */
+body {
+  background: radial-gradient(circle at center, #0a0a15, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+.cosmic-toggle-box {
+  text-align: center;
+}
+
+.toggle-title {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  color: #bfc0ff;
+}
+
+/* --- Toggle base --- */
+.cosmic-toggle {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 50px;
+  background: linear-gradient(145deg, #1d1d2b, #232338);
+  border-radius: 50px;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.8),
+              0 2px 8px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.cosmic-toggle::after {
+  /* Base reflection / ground glow */
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: radial-gradient(ellipse at center, rgba(80, 180, 200, 0.25), transparent 80%);
+  filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.cosmic-toggle-input {
+  display: none;
+}
+
+/* --- Orb (the moving circle) --- */
+.toggle-orb {
+  position: absolute;
+  top: 5px;
+  left: 6px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff, #5fd2d4 30%, #368aad 70%);
+  box-shadow: 0 0 20px rgba(95, 210, 212, 0.4);
+  transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 2;
+}
+
+/* --- Inner glow / energy line --- */
+.toggle-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(80, 180, 200, 0.15) 50%, transparent 100%);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+/* --- Checked state --- */
+.cosmic-toggle-input:checked + .cosmic-toggle {
+  background: linear-gradient(145deg, #223344, #1b2a3d);
+  box-shadow:
+    inset 0 0 20px rgba(78,205,196,0.2),
+    0 0 40px rgba(78,205,196,0.3),
+    0 0 80px rgba(78,205,196,0.1);
+}
+
+.cosmic-toggle-input:checked + .cosmic-toggle::after {
+  opacity: 1;
+}
+
+.cosmic-toggle-input:checked + .cosmic-toggle .toggle-orb {
+  transform: translateX(70px) rotate(360deg) scale(1.05);
+  background: radial-gradient(circle at 30% 30%, #fff, #7de3cf 25%, #4ed1a8 70%);
+  box-shadow: 0 0 30px rgba(125, 227, 207, 0.6), 0 0 60px rgba(78,205,196,0.5);
+}
+
+.cosmic-toggle-input:checked + .cosmic-toggle .toggle-glow {
+  opacity: 1;
+  transform: scaleX(1);
+  animation: energyFlow 1.2s infinite linear;
+}
+
+/* --- Energy animation --- */
+@keyframes energyFlow {
+  0% { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+</style>
