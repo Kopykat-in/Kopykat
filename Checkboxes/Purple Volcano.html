@@ -1,0 +1,244 @@
+<div class="flam-checkbox-holder">
+  <input type="checkbox" id="neoncheckbox" class="flam-trigger" />
+  <label for="neoncheckbox" class="flam-switch">
+    <div class="flam-cube">
+      <span class="flam-indicator">✓</span>
+      <div class="flam-fire-container">
+        <div class="flam-flame"></div>
+      </div>
+
+      <div class="flam-sparks">
+        <div
+          class="flam-spark"
+          style="--spark-offset-x:15; --spark-offset-y:80; top:10%; left:30%; width:3px; height:3px;"
+        ></div>
+        <div
+          class="flam-spark"
+          style="--spark-offset-x:-25; --spark-offset-y:90; top:5%; left:50%; width:4px; height:4px;"
+        ></div>
+        <div
+          class="flam-spark"
+          style="--spark-offset-x:20; --spark-offset-y:100; top:0%; left:70%; width:3px; height:3px;"
+        ></div>
+      </div>
+    </div>
+    <div class="flam-aura"></div>
+  </label>
+</div>
+
+<style>
+  .flam-checkbox-holder {
+  display: inline-block;
+  margin: 30px;
+  perspective: 1000px;
+}
+
+.flam-trigger {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.flam-switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.flam-cube {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  background: linear-gradient(145deg, #0f0020, #070a15);
+  border: 2px solid #7d00ff;
+  border-radius: 8px;
+  box-shadow:
+    inset 4px 4px 8px rgba(0, 0, 0, 0.7),
+    inset -4px -4px 8px rgba(80, 0, 150, 0.3),
+    0 0 15px rgba(125, 0, 255, 0.5);
+}
+
+.flam-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 2;
+  text-shadow: 0 0 10px #ff5500;
+}
+
+.flam-aura {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 12px;
+  background: radial-gradient(circle, rgba(125, 0, 255, 0.3), transparent 70%);
+  filter: blur(12px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.flam-fire-container {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 80px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.flam-flame {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 0;
+  background: linear-gradient(to top, transparent, #ff4500 40%, #ffcc00);
+  border-radius: 50% 50% 20% 20%;
+  filter: blur(6px);
+  animation:
+    flame-expand 0.5s forwards,
+    flame-flicker 1.5s infinite alternate 0.5s;
+}
+
+.flam-flame::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 0;
+  background: linear-gradient(to top, transparent 30%, #ffcc00 70%, white);
+  border-radius: 50% 50% 20% 20%;
+  filter: blur(5px);
+  animation: flame-inner-expand 0.5s 0.1s forwards;
+}
+
+.flam-sparks {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.flam-spark {
+  position: absolute;
+  background: #ffcc00;
+  border-radius: 50%;
+  filter: blur(1px);
+  animation: spark-launch 1s forwards;
+}
+
+.flam-switch:hover .flam-cube {
+  transform: translateZ(20px) scale(1.05);
+  box-shadow:
+    inset 4px 4px 8px rgba(0, 0, 0, 0.7),
+    inset -4px -4px 8px rgba(80, 0, 150, 0.4),
+    0 0 20px rgba(125, 0, 255, 0.8);
+}
+
+.flam-switch:hover {
+  color: #00f7ff;
+  text-shadow: 0 0 12px rgba(0, 247, 255, 0.9);
+}
+
+.flam-switch:hover .flam-aura {
+  opacity: 0.7;
+}
+
+.flam-trigger:checked + .flam-switch .flam-cube {
+  background: linear-gradient(145deg, #ff3000, #0f0020);
+  border-color: #ff5500;
+  box-shadow:
+    inset 4px 4px 8px rgba(0, 0, 0, 0.7),
+    inset -4px -4px 8px rgba(255, 80, 0, 0.3),
+    0 0 25px rgba(255, 80, 0, 0.8);
+  animation: cube-shake 0.1s ease;
+}
+
+.flam-trigger:checked + .flam-switch .flam-indicator {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  animation: indicator-pop 0.4s ease-out;
+}
+
+.flam-trigger:checked + .flam-switch {
+  color: #ff5500;
+  text-shadow: 0 0 12px rgba(255, 100, 0, 0.9);
+}
+
+.flam-trigger:checked + .flam-switch .flam-aura {
+  background: radial-gradient(circle, rgba(255, 100, 0, 0.5), transparent 70%);
+  opacity: 1;
+}
+
+.flam-trigger:checked + .flam-switch .flam-fire-container,
+.flam-trigger:checked + .flam-switch .flam-sparks {
+  opacity: 1;
+}
+
+@keyframes flame-expand {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 60px;
+  }
+}
+
+@keyframes flame-inner-expand {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 50px;
+  }
+}
+
+@keyframes flame-flicker {
+  0%,
+  100% {
+    height: 60px;
+    opacity: 1;
+  }
+  50% {
+    height: 65px;
+    opacity: 0.9;
+  }
+}
+
+@keyframes spark-launch {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(
+        calc(var(--spark-offset-x) * 1px),
+        calc(var(--spark-offset-y) * -1px)
+      )
+      scale(0);
+    opacity: 0;
+  }
+}
+</style>
