@@ -1,0 +1,48 @@
+<label class="checkbox">
+  <input type="checkbox" />
+  <span class="checkmark"></span>
+  Subscribe to newsletter
+</label>
+
+<style>
+  .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+    font-size: 16px;
+  }
+
+  .checkbox input {
+    display: none;
+  }
+
+  .checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #007bff;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s ease;
+  }
+
+  .checkbox input:checked + .checkmark {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  .checkbox input:checked + .checkmark::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+</style>
