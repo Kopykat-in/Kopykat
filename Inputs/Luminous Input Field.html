@@ -1,0 +1,27 @@
+<div class="luminous-input-field">
+  <input type="text" placeholder="Enter email address" />
+</div>
+
+<style>
+  .luminous-input-field input {
+    width: 18em;
+    padding: 0.8em 1em;
+    border-radius: 0.6em;
+    border: 0.1em solid #555;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-size: 1em;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+
+  .luminous-input-field input::placeholder {
+    color: #bbb;
+  }
+
+  .luminous-input-field input:focus {
+    border-color: #00e0ff;
+    box-shadow: 0 0 0.8em rgba(0, 224, 255, 0.4);
+    background: rgba(255, 255, 255, 0.1);
+  }
+</style>

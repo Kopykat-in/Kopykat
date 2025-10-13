@@ -1,0 +1,44 @@
+<label class="crystal-check-box">
+  <input type="checkbox" />
+  <span class="crystal-box"></span>
+  I Agree
+</label>
+
+<style>
+  .crystal-check-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+    font-size: 1em;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.1em solid rgba(255, 255, 255, 0.2);
+    padding: 0.6em 1em;
+    border-radius: 0.6em;
+    backdrop-filter: blur(0.3em);
+    cursor: pointer;
+    transition: background 0.3s ease, border 0.3s ease;
+  }
+
+  .crystal-check-box:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .crystal-check-box input {
+    display: none;
+  }
+
+  .crystal-box {
+    width: 1.2em;
+    height: 1.2em;
+    border: 0.15em solid #00e0ff;
+    border-radius: 0.3em;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0.3em rgba(0, 224, 255, 0.4);
+  }
+
+  .crystal-check-box input:checked + .crystal-box {
+    background: #00e0ff;
+    box-shadow: 0 0 0.8em rgba(0, 224, 255, 0.7);
+  }
+</style>
