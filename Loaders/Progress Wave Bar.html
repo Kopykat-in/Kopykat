@@ -1,0 +1,35 @@
+<div class="progress-bar">
+  <div class="wave"></div>
+</div>
+
+<style>
+  .progress-bar {
+    width: 200px;
+    height: 20px;
+    background: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #00bfff;
+    margin: 30px;
+  }
+  .wave {
+    width: 50%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      -45deg,
+      #00bfff,
+      #00bfff 10px,
+      #00ff80 10px,
+      #00ff80 20px
+    );
+    animation: moveWave 2s linear infinite alternate;
+  }
+  @keyframes moveWave {
+    from {
+      width: 30%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+</style>

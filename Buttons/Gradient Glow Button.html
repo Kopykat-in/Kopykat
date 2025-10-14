@@ -1,0 +1,28 @@
+<button class="gradient-glow-btn">Submit</button>
+
+<style>
+  .gradient-glow-btn {
+    background: linear-gradient(90deg, #ff7b00, #ff00c8);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0px rgba(255, 0, 200, 0.4);
+  }
+
+  /* Hover state for usability */
+  .gradient-glow-btn:hover {
+    box-shadow: 0 0 15px rgba(255, 0, 200, 0.6), 0 0 25px rgba(255, 123, 0, 0.5);
+    transform: scale(1.05);
+  }
+
+  /* Focus accessibility */
+  .gradient-glow-btn:focus {
+    outline: 2px solid #ff00c8;
+    outline-offset: 4px;
+  }
+</style>

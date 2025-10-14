@@ -1,0 +1,38 @@
+<label class="toggle">
+  <input type="checkbox" />
+  <span class="slider"></span>
+</label>
+
+<style>
+  .toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+  }
+  .toggle input {
+    display: none;
+  }
+  .slider {
+    position: absolute;
+    inset: 0;
+    background: #333;
+    border-radius: 30px;
+    transition: 0.4s;
+  }
+  .slider::before {
+    content: "🌙";
+    position: absolute;
+    left: 5px;
+    top: 3px;
+    font-size: 18px;
+    transition: 0.4s;
+  }
+  .toggle input:checked + .slider {
+    background: #ffeb3b;
+  }
+  .toggle input:checked + .slider::before {
+    content: "☀️";
+    left: 35px;
+  }
+</style>

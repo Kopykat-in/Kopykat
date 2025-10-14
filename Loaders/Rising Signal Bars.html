@@ -1,0 +1,48 @@
+<!-- ***Created by Kavitha - KopyKat Powered by Fnext*** -->
+
+<div class="rising-signal-bars">
+  <span></span><span></span><span></span><span></span>
+</div>
+
+<style>
+  .rising-signal-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    height: 40px;
+    margin: 25px;
+  }
+  .rising-signal-bars span {
+    width: 6px;
+    background: #7b2ff7;
+    border-radius: 3px;
+    animation: signalRise 1s ease-in-out infinite;
+  }
+  .rising-signal-bars span:nth-child(1) {
+    height: 10px;
+    animation-delay: 0s;
+  }
+  .rising-signal-bars span:nth-child(2) {
+    height: 18px;
+    animation-delay: 0.1s;
+  }
+  .rising-signal-bars span:nth-child(3) {
+    height: 26px;
+    animation-delay: 0.2s;
+  }
+  .rising-signal-bars span:nth-child(4) {
+    height: 34px;
+    animation-delay: 0.3s;
+  }
+  @keyframes signalRise {
+    0%,
+    100% {
+      transform: scaleY(0.7);
+      opacity: 0.6;
+    }
+    50% {
+      transform: scaleY(1.3);
+      opacity: 1;
+    }
+  }
+</style>
