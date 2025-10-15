@@ -1,0 +1,23 @@
+<input type="text" class="glass-input" placeholder="Enter City" />
+
+<style>
+  .glass-input {
+    width: 220px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(8px);
+    outline: none;
+    transition: 0.4s;
+    margin: 20px;
+  }
+  .glass-input::placeholder {
+    color: #ccc;
+  }
+  .glass-input:focus {
+    border-color: #00bfff;
+    box-shadow: 0 0 15px #00bfff;
+  }
+</style>

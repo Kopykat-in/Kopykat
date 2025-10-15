@@ -1,0 +1,38 @@
+<button class="send-btn">
+  <span>Send</span>
+  <div class="plane">✈️</div>
+</button>
+
+<style>
+  .send-btn {
+    background: linear-gradient(90deg, #0066ff, #00ccff);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+  }
+  .send-btn:hover .plane {
+    animation: fly 1s ease-in-out;
+  }
+  @keyframes fly {
+    0% {
+      transform: translateX(0) rotate(0deg);
+    }
+    50% {
+      transform: translateX(40px) rotate(30deg);
+      opacity: 0.7;
+    }
+    100% {
+      transform: translateX(0) rotate(0deg);
+      opacity: 1;
+    }
+  }
+</style>

@@ -1,0 +1,50 @@
+<div class="upload-container">
+  <div class="arrow">⬆️</div>
+  <div class="progress"></div>
+</div>
+
+<style>
+  .upload-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+  }
+  .arrow {
+    font-size: 50px;
+    animation: bounce 1.5s infinite;
+  }
+  .progress {
+    width: 120px;
+    height: 10px;
+    background: #222;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  .progress::after {
+    content: "";
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, #00bfff, #00ff80);
+    width: 0%;
+    animation: load 3s infinite alternate ease-in-out;
+  }
+  @keyframes load {
+    from {
+      width: 20%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+</style>

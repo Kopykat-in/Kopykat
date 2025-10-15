@@ -1,0 +1,31 @@
+<label class="electric-checkbox">
+  <input type="checkbox" />
+  <span class="electric"></span>
+  Electric Box Tick
+</label>
+
+<style>
+  .electric-checkbox {
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+  }
+  .electric-checkbox input {
+    opacity: 0;
+    position: absolute;
+  }
+  .electric-checkbox .electric {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #00ffff;
+    border-radius: 4px;
+    transition: 0.3s;
+  }
+  .electric-checkbox input:checked ~ .electric {
+    background: #00ffff;
+    box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff inset;
+  }
+</style>

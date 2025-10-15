@@ -1,0 +1,45 @@
+<label class="pulse-checkbox">
+  <input type="checkbox" />
+  <span class="pulse"></span>
+  Pulse Check Effect
+</label>
+
+<style>
+  .pulse-checkbox {
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .pulse-checkbox input {
+    opacity: 0;
+    position: absolute;
+  }
+  .pulse-checkbox .pulse {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 20px;
+    width: 20px;
+    border: 2px solid #ff00cc;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+  .pulse-checkbox input:checked ~ .pulse {
+    background: #ff00cc;
+    animation: pulseAnim 0.5s ease;
+  }
+  @keyframes pulseAnim {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 #ff00cc;
+    }
+    70% {
+      transform: scale(1.3);
+      box-shadow: 0 0 20px #ff00cc;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+</style>
