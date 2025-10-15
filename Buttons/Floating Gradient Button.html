@@ -1,0 +1,36 @@
+<div class="white-bg">
+  <button class="float-btn">Float Me 🌊</button>
+</div>
+
+<style>
+  .white-bg {
+  background: white;
+  padding: 20px;
+}
+.float-btn {
+  position: relative;
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.float-btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.4) 10%, transparent 10.01%);
+  background-size: 20px 20px;
+  animation: wave 2s linear infinite;
+}
+@keyframes wave {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(20px); }
+}
+</style>
