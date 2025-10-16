@@ -1,0 +1,31 @@
+<div class="rot-input">
+  <input type="text" required />
+  <label>Rotating Label</label>
+</div>
+
+<style>
+  .rot-input {
+    position: relative;
+    width: 250px;
+  }
+  .rot-input input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+  }
+  .rot-input label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    transition: 0.3s;
+    color: #555;
+  }
+  .rot-input input:focus + label,
+  .rot-input input:valid + label {
+    top: -10px;
+    font-size: 12px;
+    color: #007bff;
+  }
+</style>

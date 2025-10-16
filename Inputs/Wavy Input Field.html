@@ -1,0 +1,29 @@
+<input type="text" class="wavy-input" placeholder="Type something..." />
+
+<style>
+  .wavy-input {
+    border: none;
+    border-bottom: 3px solid #007bff;
+    padding: 10px;
+    width: 250px;
+    font-size: 16px;
+    transition: 0.4s;
+    background: transparent;
+  }
+  .wavy-input:focus {
+    border-bottom: 3px solid transparent;
+    background: linear-gradient(to right, #007bff 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    animation: waveBorder 1s infinite linear;
+    outline: none;
+  }
+  @keyframes waveBorder {
+    0% {
+      background-position: right bottom;
+    }
+    100% {
+      background-position: left bottom;
+    }
+  }
+</style>

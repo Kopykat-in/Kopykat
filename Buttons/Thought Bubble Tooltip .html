@@ -1,0 +1,21 @@
+<button class="bubble-btn">Hover Me</button>
+<span class="tooltip">💡 Surprise Element!</span>
+
+<style>
+  .tooltip {
+    visibility: hidden;
+    background: #007bff;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 120px;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+  .bubble-btn:hover + .tooltip {
+    visibility: visible;
+    transform: scale(1.1);
+  }
+</style>

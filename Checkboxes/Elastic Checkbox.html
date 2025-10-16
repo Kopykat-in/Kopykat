@@ -1,0 +1,29 @@
+<label class="elastic-box">
+  <input type="checkbox" />
+  <span></span> Elastic
+</label>
+
+<style>
+  .elastic-box {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+  }
+  .elastic-box input {
+    display: none;
+  }
+  .elastic-box span {
+    width: 20px;
+    height: 20px;
+    background: #ddd;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 4px;
+    transition: all 0.3s;
+  }
+  .elastic-box input:checked + span {
+    transform: scale(1.3);
+    background: #007bff;
+  }
+</style>

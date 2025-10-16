@@ -1,0 +1,86 @@
+<label class="wood-switch">
+  <input type="checkbox" />
+  <span class="slider"></span>
+</label>
+
+<style>
+  body {
+    background-color: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .wood-switch {
+    position: relative;
+    display: inline-block;
+    width: 100px; /* Increased width */
+    height: 50px; /* Increased height */
+  }
+
+  .wood-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 6px; /* Increased top/bottom spacing */
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    background: linear-gradient(
+      135deg,
+      #3e2f1c 0%,
+      #5a4828 25%,
+      #3e2f1c 50%,
+      #5a4828 75%,
+      #3e2f1c 100%
+    );
+    border-radius: 25px; /* Half of height for pill shape */
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.8),
+      0 6px 10px rgba(0, 0, 0, 0.7);
+    transition: background 0.3s ease;
+    background-size: 60px 60px; /* scaled pattern */
+  }
+
+  .slider::before {
+    position: absolute;
+    content: "";
+    height: 40px; /* Bigger knob height */
+    width: 40px; /* Bigger knob width */
+    left: 6px;
+    bottom: 6px;
+    background: linear-gradient(145deg, #6e511f, #2d1f0d);
+    border-radius: 50%;
+    box-shadow: inset 3px 3px 10px #7a651f, inset -3px -3px 6px #1e1308,
+      0 5px 10px rgba(0, 0, 0, 0.9), 0 0 10px #a1742e;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Toggle ON - knob slides right */
+  .wood-switch input:checked + .slider {
+    background: linear-gradient(
+      135deg,
+      #755e29 0%,
+      #a18039 25%,
+      #755e29 50%,
+      #a18039 75%,
+      #755e29 100%
+    );
+    background-size: 60px 60px;
+    box-shadow: inset 0 4px 8px rgba(255, 215, 0, 0.8),
+      0 8px 16px rgba(255, 215, 0, 0.6);
+  }
+
+  .wood-switch input:checked + .slider::before {
+    transform: translateX(50px); /* Adjusted for bigger width */
+    box-shadow: inset 3px 3px 10px #c7a63d, inset -3px -3px 8px #503f18,
+      0 7px 14px rgba(255, 215, 0, 0.8), 0 0 18px #ffea70;
+  }
+</style>

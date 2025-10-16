@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elegant Button</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    style="
+      background: #f9f9f9;
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <button class="secure-btn">Buy Now</button>
+  </body>
+</html>
+
+<style>
+  .secure-btn {
+    --btn-bg: linear-gradient(135deg, #ff4d4d, #ff8080);
+    --btn-hover: linear-gradient(135deg, #ff6666, #ff9999);
+    --btn-active: linear-gradient(135deg, #e64545, #ff7373);
+    --btn-text: #fff;
+    --btn-shadow: 0 0.5em 1em rgba(255, 77, 77, 0.3);
+
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0.8em 2em;
+    color: var(--btn-text);
+    background: var(--btn-bg);
+    border: none;
+    border-radius: 2em;
+    box-shadow: var(--btn-shadow);
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+
+    /* Smooth transitions for multiple properties */
+    transition: background 0.4s ease,
+      transform 0.4s cubic-bezier(0.25, 1.5, 0.5, 1), box-shadow 0.4s ease,
+      filter 0.4s ease;
+    transform-origin: center bottom;
+  }
+
+  /* Subtle ripple glow on focus */
+  .secure-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  /* Hover state with bounce and shadow transition */
+  .secure-btn:hover {
+    background: var(--btn-hover);
+    animation: bounceHover 0.4s;
+    box-shadow: 0 0.8em 1.5em rgba(255, 77, 77, 0.4);
+    filter: brightness(1.05);
+  }
+
+  /* Focus state */
+  .secure-btn:focus::after {
+    opacity: 1;
+  }
+
+  /* Active / Click state with stronger bounce */
+  .secure-btn:active {
+    background: var(--btn-active);
+    animation: bounceClick 0.2s;
+    transform: scale(0.96);
+    box-shadow: 0 0.2em 0.6em rgba(255, 77, 77, 0.4);
+    filter: brightness(0.95);
+  }
+
+  /* Keyframes for hover bounce */
+  @keyframes bounceHover {
+    0% {
+      transform: translateY(0) scale(1);
+    }
+    30% {
+      transform: translateY(-0.2em) scale(1.05);
+    }
+    50% {
+      transform: translateY(0) scale(1);
+    }
+    70% {
+      transform: translateY(-0.1em) scale(1.02);
+    }
+    100% {
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Keyframes for click bounce */
+  @keyframes bounceClick {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.9) translateY(0.1em);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+</style>
