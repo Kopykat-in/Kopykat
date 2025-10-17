@@ -1,0 +1,105 @@
+<label class="dark-toggle">
+  <input type="checkbox" />
+  <span class="slider">
+    <span class="icon">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <circle
+          cx="14"
+          cy="14"
+          r="7"
+          stroke="#888"
+          stroke-width="2"
+          fill="#222"
+        />
+        <g stroke="#888" stroke-width="2">
+          <line x1="14" y1="2" x2="14" y2="6" />
+          <line x1="14" y1="22" x2="14" y2="26" />
+          <line x1="2" y1="14" x2="6" y2="14" />
+          <line x1="22" y1="14" x2="26" y2="14" />
+          <line x1="5.2" y1="5.2" x2="7.8" y2="7.8" />
+          <line x1="20.2" y1="20.2" x2="17.8" y2="17.8" />
+          <line x1="5.2" y1="22.8" x2="7.8" y2="20.2" />
+          <line x1="20.2" y1="7.8" x2="17.8" y2="5.2" />
+        </g>
+      </svg>
+    </span>
+    <span class="label">DARK<br />MODE</span>
+  </span>
+</label>
+
+<style>
+  .dark-toggle {
+    position: relative;
+    display: inline-block;
+    width: 130px;
+    height: 56px;
+    background: white;
+    border-radius: 40px;
+    box-shadow: 0 2px 12px #111216, 0 1px 2px #222 inset;
+    padding: 0 0 0 8px;
+    font-family: "Segoe UI", Arial, sans-serif;
+  }
+
+  .dark-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 130px;
+    height: 56px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s;
+  }
+
+  .icon {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 44px;
+    width: 44px;
+    background: #222;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px #111216, 0 1px 1px #333 inset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.4s cubic-bezier(0.4, 2, 0.6, 1), box-shadow 0.4s,
+      background 0.4s;
+    z-index: 3;
+  }
+
+  .label {
+    margin-left: 68px;
+    color: #ccc;
+    font-size: 1.15em;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    transition: color 0.3s, text-shadow 0.3s, opacity 0.4s;
+    pointer-events: auto;
+    z-index: 2;
+  }
+
+  .dark-toggle input:checked + .slider .icon {
+    left: 78px; /* Slides knob to right */
+    box-shadow: 0 0 8px 3px #33bbe0, 0 2px 8px #111216;
+    background: #33bbe0;
+  }
+
+  .dark-toggle input:checked + .slider .label {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .dark-toggle input:checked + .slider {
+    background: #222b2e;
+  }
+</style>

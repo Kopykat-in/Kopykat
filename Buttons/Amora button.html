@@ -1,0 +1,71 @@
+<div class="button-container">
+  <label class="heart-button">
+    <input type="checkbox" />
+    <span class="emoji">❤️</span>
+    <span class="emoji smile">🥰</span>
+  </label>
+</div>
+
+<style>
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .button-container {
+    height: 100vh; /* full viewport height */
+    width: 100vw; /* full viewport width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .heart-button {
+    background: white;
+    align-content: center;
+    border: none;
+    font-size: 2.5rem;
+    padding: 1px 1px;
+    border-radius: 100%;
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.6);
+    transition: background 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    position: relative;
+    user-select: none;
+  }
+
+  .heart-button:hover {
+    background: white;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px red;
+  }
+
+  .heart-button input {
+    display: none;
+  }
+
+  .emoji {
+    position: absolute;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .smile {
+    opacity: 0;
+  }
+
+  .heart-button input:checked ~ .emoji {
+    opacity: 0;
+  }
+
+  .heart-button input:checked ~ .smile {
+    opacity: 1;
+  }
+</style>

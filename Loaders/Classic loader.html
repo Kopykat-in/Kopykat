@@ -1,0 +1,66 @@
+<div>
+  <div class="loader"></div>
+  <div class="loading-text">Loading...</div>
+</div>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Segoe UI", sans-serif;
+  }
+
+  .loader {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 6px solid transparent;
+    border-top: 6px solid rgb(0, 0, 0);
+    animation: spin 1s linear infinite;
+    box-shadow: 0 0 1em #0ff, 0 0 2em #0ff inset;
+    position: relative;
+  }
+
+  .loader::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 60%;
+    background: #0a0a0a;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .loading-text {
+    margin-top: 1.2em;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 1em;
+    letter-spacing: 1px;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+</style>
