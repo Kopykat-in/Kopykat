@@ -1,0 +1,17 @@
+<input type="text" class="shimmer-input" placeholder="Shimmer Input" />
+
+<style>
+  .shimmer-input {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #fff, #f0f8ff, #fff);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+  }
+  @keyframes shimmer {
+    100% {
+      background-position: -200% 0;
+    }
+  }
+</style>

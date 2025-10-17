@@ -1,0 +1,40 @@
+<label class="bounce-box">
+  <input type="checkbox" />
+  <span></span> Bounce
+</label>
+
+<style>
+  .bounce-box {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+  }
+  .bounce-box input {
+    display: none;
+  }
+  .bounce-box span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: #ddd;
+    border-radius: 4px;
+    transition: all 0.3s;
+  }
+  .bounce-box input:checked + span {
+    animation: bounce 0.5s forwards;
+    background: #007bff;
+  }
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+</style>

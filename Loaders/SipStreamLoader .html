@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Neon Coffee Cup Loader</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="loading-container">
+      <div class="cup-loader">
+        <svg
+          class="coffee-cup-svg"
+          viewBox="0 0 160 140"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <!-- Cup main body -->
+          <path
+            class="cup-path"
+            d="M40 40
+        C40 20, 110 20, 110 40
+        L110 90
+        C110 110, 40 110, 40 90
+        Z"
+          />
+          <!-- Saucer -->
+          <ellipse class="saucer-path" cx="75" cy="125" rx="65" ry="15" />
+          <!-- Handle -->
+          <path
+            class="handle-path"
+            d="M110 50
+        C135 50, 140 85, 110 90"
+          />
+          <!-- Steam rising -->
+          <path class="steam1" d="M60 10 Q55 0 60 0" />
+          <path class="steam2" d="M75 5 Q70 -5 75 -5" />
+          <path class="steam3" d="M90 10 Q85 0 90 0" />
+        </svg>
+      </div>
+      <span class="loading-text">Loading...</span>
+    </div>
+  </body>
+</html>
+
+<style>
+  /* Full page and background to dark for neon visibility */
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fffc00;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Center container */
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 20px;
+    gap: 25px;
+    color: #fffc00;
+  }
+
+  /* Cup loader sizing */
+  .cup-loader {
+    width: 160px;
+    height: 140px;
+    position: relative;
+  }
+
+  /* SVG Cup outline styling with neon glow */
+  .coffee-cup-svg {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: #fffc00;
+    stroke-width: 5;
+    filter: drop-shadow(0 0 7px #fffc00) drop-shadow(0 0 18px #fff946);
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+
+  /* Cup and Saucer stroke dash animation */
+  .cup-path,
+  .saucer-path {
+    stroke-dasharray: 280;
+    stroke-dashoffset: 280;
+    animation: cup-load 3s linear infinite;
+  }
+
+  /* Handle with constant neon glow and animated stroke */
+  .handle-path {
+    stroke: #fff200;
+    stroke-width: 4;
+    filter: drop-shadow(0 0 8px #fff200) drop-shadow(0 0 14px #fff25c);
+    stroke-dasharray: 120;
+    stroke-dashoffset: 120;
+    animation: cup-load 3s linear infinite;
+    animation-delay: 1s;
+  }
+
+  /* Steam lines with flicker animation */
+  .steam1,
+  .steam2,
+  .steam3 {
+    stroke: #ffff66;
+    stroke-width: 3;
+    stroke-linecap: round;
+    opacity: 0.7;
+    animation: steam-flicker 1.5s ease-in-out infinite;
+  }
+
+  .steam2 {
+    animation-delay: 1.5s;
+  }
+
+  .steam3 {
+    animation-delay: 0s;
+  }
+
+  /* Loading text style with neon glow */
+  .loading-text {
+    color: #fffc00;
+    text-shadow: 0 0 15px #ffff66;
+    font-weight: bold;
+  }
+
+  /* Loading stroke animation - dash offset from hidden to visible */
+  @keyframes cup-load {
+    0% {
+      stroke-dashoffset: 280;
+      opacity: 0.2;
+    }
+    50% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+    100% {
+      stroke-dashoffset: 280;
+      opacity: 0.2;
+    }
+  }
+
+  /* Steam flicker effect */
+  @keyframes steam-flicker {
+    0%,
+    100% {
+      opacity: 0.7;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+</style>

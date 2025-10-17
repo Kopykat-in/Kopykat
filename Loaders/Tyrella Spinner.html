@@ -1,0 +1,148 @@
+<div class="loading-container">
+  <span class="tire">
+    <span class="tread-stripes">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span>
+    </span>
+  </span>
+  <span class="loading-text">Loading...</span>
+</div>
+
+<style>
+  /* Center container */
+  .loading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    height: 100vh; /* full viewport height */
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+
+  /* Tire container */
+  .tire {
+    width: 80px;
+    height: 80px;
+    border: 8px solid #333;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: roll 1s linear infinite;
+    background: radial-gradient(circle at center, #666 45%, #333 85%);
+    position: relative;
+    overflow: visible;
+  }
+
+  /* Tire spokes */
+  .tire::before,
+  .tire::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3px;
+    height: 20px;
+    background: #333;
+    transform-origin: center center;
+    box-shadow: 12px 0 #333, -12px 0 #333;
+  }
+  .tire::before {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  .tire::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  /* Tire tread stripe container */
+  .tire .tread-stripes {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Each stripe */
+  .tread-stripes span {
+    position: absolute;
+    width: 6px;
+    height: 18px;
+    background: linear-gradient(135deg, #222, #555);
+    border-radius: 2px;
+    top: 6px;
+    left: 50%;
+    transform-origin: center 30px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Distribute stripes evenly with angle rotated */
+  .tread-stripes span:nth-child(1) {
+    transform: rotate(0deg) translateX(-50%);
+  }
+  .tread-stripes span:nth-child(2) {
+    transform: rotate(20deg) translateX(-50%);
+  }
+  .tread-stripes span:nth-child(3) {
+    transform: rotate(40deg) translateX(-50%);
+  }
+  .tread-stripes span:nth-child(4) {
+    transform: rotate(60deg) translateX(-50%);
+  }
+  .tread-stripes span:nth-child(5) {
+    transform: rotate(80deg) translateX(-50%);
+  }
+  .tread-stripes span:nth-child(6) {
+    transform: rotate(100deg) translateX(-50%);
+  }
+  .tread-stripes span:nth-child(7) {
+    transform: rotate(120deg) translateX(-50%);
+  }
+  .tread-stripes span:nth-child(8) {
+    transform: rotate(140deg) translateX(-50%);
+  }
+  .tread-stripes span:nth-child(9) {
+    transform: rotate(160deg) translateX(-50%);
+  }
+  .tread-stripes span:nth-child(10) {
+    transform: rotate(180deg) translateX(-50%);
+  }
+  .tread-stripes span:nth-child(11) {
+    transform: rotate(200deg) translateX(-50%);
+  }
+  .tread-stripes span:nth-child(12) {
+    transform: rotate(220deg) translateX(-50%);
+  }
+  .tread-stripes span:nth-child(13) {
+    transform: rotate(240deg) translateX(-50%);
+  }
+  .tread-stripes span:nth-child(14) {
+    transform: rotate(260deg) translateX(-50%);
+  }
+  .tread-stripes span:nth-child(15) {
+    transform: rotate(280deg) translateX(-50%);
+  }
+  .tread-stripes span:nth-child(16) {
+    transform: rotate(300deg) translateX(-50%);
+  }
+  .tread-stripes span:nth-child(17) {
+    transform: rotate(320deg) translateX(-50%);
+  }
+  .tread-stripes span:nth-child(18) {
+    transform: rotate(340deg) translateX(-50%);
+  }
+
+  /* Rolling animation */
+  @keyframes roll {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
