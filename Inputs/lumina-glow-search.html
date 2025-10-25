@@ -1,0 +1,89 @@
+<div class="neon-glass-search">
+  <input type="text" placeholder="Search...">
+  <button class="icon-btn" title="Search">
+    <!-- Search filter SVG icon -->
+    <svg viewBox="0 0 24 24" width="24" height="24">
+      <circle cx="11" cy="11" r="8" stroke="#fff" stroke-width="2" fill="none"/>
+      <rect x="16" y="16" width="5" height="2" rx="1" fill="#fff">
+        <animate attributeName="x" values="16;17;16" dur="1.5s" repeatCount="indefinite"/>
+      </rect>
+    </svg>
+  </button>
+</div>
+
+<style>
+    body {
+  background: #101015;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.neon-glass-search {
+  display: flex;
+  align-items: center;
+  background: rgba(20,20,30,0.75);
+  border-radius: 1.5em;
+  padding: 0.3em 0.65em;
+  box-shadow: 0 0 22px 3px #901eff60, 0 1.5px 8em #ad19fa12 inset;
+  border: 2.2px solid transparent;
+  position: relative;
+  width: 330px;
+  max-width: 97vw;
+  animation: borderPulse 2.1s infinite alternate;
+}
+
+@keyframes borderPulse {
+  0%   { box-shadow: 0 0 22px 3px #943aff60, 0 1.5px 8em #ad19fa12 inset;}
+  100% { box-shadow: 0 0 38px 6px #b230ff85, 0 1.5px 12em #e974fd33 inset;}
+}
+
+.neon-glass-search input[type="text"] {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1.23em;
+  width: 100%;
+  padding: 0.8em 0.7em 0.8em 0.3em;
+  border-radius: 1.2em 0 0 1.2em;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  letter-spacing: 0.02em;
+  box-shadow: none;
+  transition: color 0.19s;
+}
+
+.neon-glass-search input[type="text"]::placeholder {
+  color: #b67cff;
+  opacity: 0.75;
+  letter-spacing: 0.04em;
+}
+
+.icon-btn {
+  background: rgba(36,17,79,0.82);
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  margin-left: 0.31em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, box-shadow 0.18s;
+  box-shadow: 0 1.2px 14px #ae5fff88;
+  cursor: pointer;
+  position: relative;
+  z-index: 12;
+}
+
+.icon-btn:hover {
+  background: #a900ff;
+  box-shadow: 0 0 20px #f74cffcc, 0 1.2px 24px #ad19fa22;
+}
+
+.icon-btn svg {
+  display: block;
+}
+</style>

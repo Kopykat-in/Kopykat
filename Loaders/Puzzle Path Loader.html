@@ -1,0 +1,40 @@
+<div class="puzzle-wheel-loader">
+  <div class="puzzle-piece piece1"></div>
+  <div class="puzzle-piece piece2"></div>
+  <div class="puzzle-piece piece3"></div>
+  <div class="puzzle-piece piece4"></div>
+</div>
+
+<style>
+    .puzzle-wheel-loader {
+  position: relative;
+  height: 6em;
+  width: 6em;
+  margin: 2em auto;
+  animation: rotate-wheel 2s linear infinite;
+}
+
+.puzzle-piece {
+  position: absolute;
+  width: 2.5em;
+  height: 2.5em;
+  background-color: rgb(176, 92, 255);
+  border-radius: 0.5em;
+  animation: wobble-piece 1.8s ease-in-out infinite;
+}
+
+.piece1 { top: 0; left: 0; animation-delay: 0; }
+.piece2 { top: 0; right: 0; animation-delay: 0.45s; }
+.piece3 { bottom: 0; right: 0; animation-delay: 0.9s; }
+.piece4 { bottom: 0; left: 0; animation-delay: 1.35s; }
+
+@keyframes rotate-wheel {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+@keyframes wobble-piece {
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(-0.3em);}
+}
+</style>

@@ -1,0 +1,65 @@
+<label class="star-glow-toggle">
+  <input type="checkbox" />
+  <span class="track">
+    <span class="knob">
+      <svg width="19" height="19" viewBox="0 0 19 19" fill="none"><polygon points="9.5,2 11,7.7 17,7.7 12,11.5 13.5,17 9.5,13.8 5.5,17 7,11.5 2,7.7 8,7.7" fill="#fff8e1"/></svg>
+    </span>
+    <span class="spark"></span>
+  </span>
+</label>
+
+<style>
+    .star-glow-toggle {
+  display: inline-block;
+  width: 68px;
+  height: 38px;
+  position: relative;
+}
+.star-glow-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.track {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background: linear-gradient(90deg, #171b29 10%, #08578c 100%);
+  box-shadow: 0 0 14px 2px #3ea8ff66 inset;
+  transition: background 0.5s;
+}
+.knob {
+  position: absolute;
+  top: 4px; left: 4px;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 70% 30%, #3ea8ff 30%, #0e253a 100%);
+  box-shadow: 0 0 18px #2c50ff80, 0 2px 10px #0e253a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.43s cubic-bezier(.59,.07,.49,1.49), background 0.43s;
+}
+.star-glow-toggle input:checked + .track .knob {
+  left: 32px;
+  background: radial-gradient(circle at 40% 70%, #fff8e1 22%, #ffe95d 100%);
+  box-shadow: 0 0 24px #ffe95d80;
+}
+.spark {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  border-radius: 8px;
+  background: radial-gradient(circle, #6ae8ff88 42%, transparent 100%);
+  top: 9px; left: 40px;
+  opacity: 0.7;
+  animation: twinkle 1.5s infinite alternate;
+}
+@keyframes twinkle {
+  0% { opacity: 0.5; transform: scale(1);}
+  100% { opacity: 1; transform: scale(1.3);}
+}
+</style>

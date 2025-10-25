@@ -1,0 +1,96 @@
+<div class="pencil-draw-loader">
+  <svg viewBox="0 0 100 100" class="pencil-arc">
+    <path class="pencil-stroke" d="M20,80 A30,30 0 0 1 80,20" />
+  </svg>
+  <div class="pencil">
+    <div class="pencil-eraser"></div>
+    <div class="pencil-body"></div>
+    <div class="pencil-point"></div>
+  </div>
+</div>
+
+<style>
+    .pencil-draw-loader {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 3em auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pencil-arc {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.pencil-stroke {
+  stroke: #439aff;
+  stroke-width: 5;
+  fill: none;
+  stroke-dasharray: 190;
+  stroke-dashoffset: 190;
+  animation: draw-arc 2s ease-in-out infinite;
+}
+
+@keyframes draw-arc {
+  0% {
+    stroke-dashoffset: 190;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 190;
+  }
+}
+
+.pencil {
+  width: 40px;
+  height: 15px;
+  position: absolute;
+  left: 77px;
+  top: 18px;
+  transform-origin: left center;
+  animation: move-pencil 2s ease-in-out infinite;
+}
+@keyframes move-pencil {
+  0% { transform: rotate(0deg) }
+  50% { transform: rotate(50deg) }
+  100% { transform: rotate(0deg) }
+}
+
+.pencil-eraser {
+  width: 8px; height: 15px;
+  background: #ffb366;
+  border-radius: 4px 4px 2px 2px;
+  float: left;
+  margin-right: 2px;
+}
+
+.pencil-body {
+  width: 23px; height: 13px;
+  background: #3b5ea7;
+  border-radius: 3px 9px 9px 3px;
+  float: left;
+  margin-right: 2px;
+  margin-top: 2px;
+}
+
+.pencil-point {
+  width: 7px; height: 15px;
+  background: repeating-linear-gradient(
+    45deg,
+    #fcea8a, #fcea8a 3px,
+    #b78f51 3px, #b78f51 7px
+  );
+  clip-path: polygon(100% 0%, 100% 100%, 50% 70%, 0 100%, 0 0);
+  float: left;
+  position: relative;
+  top: 1px;
+}
+</style>

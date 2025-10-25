@@ -1,0 +1,107 @@
+<div class="spin-bounce-loader">
+  <div class="basketball"></div>
+  <div class="shadow"></div>
+</div>
+
+<style>
+    .spin-bounce-loader {
+  position: relative;
+  width: 7em;
+  height: 7em;
+  margin: 2em auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.basketball {
+  width: 3em;
+  height: 3em;
+  background: radial-gradient(circle at 60% 35%, #ffb74d 70%, #ff930f 100%);
+  border-radius: 50%;
+  border: 2.5px solid #a85c00;
+  position: absolute;
+  left: 50%;
+  bottom: 2.3em;
+  transform: translateX(-50%);
+  box-shadow: 0 0 16px #ffad4299;
+  animation: bounce-ball 1.25s cubic-bezier(.71,.03,.31,1.33) infinite,
+    spin-ball 1.25s linear infinite;
+  z-index: 2;
+  overflow: hidden;
+}
+.basketball::before, .basketball::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.basketball::before {
+  left: 50%;
+  top: 7%;
+  width: 2.4em;
+  height: 2.4em;
+  border-left: 2px solid #a85c00;
+  border-right: 2px solid #a85c00;
+  transform: translateX(-50%);
+}
+.basketball::after {
+  left: 5%;
+  top: 46%;
+  width: 2.6em;
+  height: 1em;
+  border-top: 2px solid #a85c00;
+  border-bottom: 2px solid #a85c00;
+  transform: rotate(-19deg);
+}
+
+.shadow {
+  width: 2.2em;
+  height: 0.45em;
+  background: radial-gradient(ellipse at center, #000 66%, transparent 100%);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: 0.8em;
+  transform: translateX(-50%) scaleX(1) scaleY(1);
+  z-index: 1;
+  filter: blur(1.2px);
+  opacity: 0.19;
+  animation: shadow-bounce 1.25s cubic-bezier(.71,.03,.31,1.33) infinite;
+}
+
+@keyframes bounce-ball {
+  0%, 100% {
+    bottom: 2.3em;
+    animation-timing-function: cubic-bezier(.71,.03,.31,1.33);
+  }
+  10% { bottom: 4.3em;}
+  20% { bottom: 3.2em;}
+  40% { bottom: 1.2em;}
+  60% { bottom: 2.3em;}
+  80% { bottom: 2.1em;}
+}
+
+@keyframes spin-ball {
+  100% { transform: translateX(-50%) rotate(360deg);}
+}
+
+@keyframes shadow-bounce {
+  0%, 100% {
+    transform: translateX(-50%) scaleX(1.02) scaleY(1);
+    opacity: 0.19;
+  }
+  10% {
+    transform: translateX(-50%) scaleX(1.17) scaleY(0.85);
+    opacity: 0.30;
+  }
+  40% {
+    transform: translateX(-50%) scaleX(1.05) scaleY(1.20);
+    opacity: 0.12;
+  }
+  60% {
+    transform: translateX(-50%) scaleX(1.02) scaleY(1);
+    opacity: 0.19;
+  }
+}
+</style>

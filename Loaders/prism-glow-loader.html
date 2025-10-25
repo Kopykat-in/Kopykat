@@ -1,0 +1,74 @@
+<div class="prism-glow-loader">
+  <div class="pyramid">
+    <div class="face face1"></div>
+    <div class="face face2"></div>
+    <div class="face face3"></div>
+    <div class="face face4"></div>
+  </div>
+  <div class="pyramid-glow"></div>
+</div>
+
+<style>
+    .prism-glow-loader {
+  position: relative;
+  width: 140px;
+  height: 120px;
+  margin: 4em auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.pyramid {
+  width: 88px;
+  height: 88px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: prismSpin 2.75s linear infinite;
+  margin: 0 auto 16px;
+}
+
+.face {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 44px 76px 44px;
+  border-color: transparent transparent #fff transparent;
+  opacity: 0.98;
+  filter: blur(0.5px);
+}
+
+.face1 { border-bottom-color: #cc92ff; transform: rotateY(0deg)    translateZ(44px); }
+.face2 { border-bottom-color: #9afff7; transform: rotateY(120deg)  translateZ(44px);}
+.face3 { border-bottom-color: #ff81a7; transform: rotateY(240deg)  translateZ(44px);}
+.face4 {
+  border-bottom-color: #fff5cc;
+  opacity: 0.22;
+  filter: blur(12px);
+  transform: rotateX(-99deg) translateY(30px) scale(1.12);
+}
+
+.pyramid-glow {
+  position: absolute;
+  width: 70px;
+  height: 22px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 48px 48px 80px 80px/38px 38px 90px 90px;
+  background: radial-gradient(ellipse at center, #d3a5ff44 40%, #f6cfff13 80%, transparent 100%);
+  filter: blur(2.2px);
+  z-index: 1;
+  opacity: 0.97;
+  animation: glowFade 1.9s ease-in-out infinite alternate;
+}
+
+@keyframes prismSpin {
+  0% { transform: rotateY(0deg) rotateX(-18deg); }
+  100% { transform: rotateY(360deg) rotateX(-18deg); }
+}
+@keyframes glowFade {
+  to { opacity: 0.77; transform: translateX(-50%) scale(1.08);}
+}
+</style>

@@ -1,0 +1,43 @@
+<div class="cube-spin-loader">
+  <div class="cube-face"></div>
+  <div class="cube-face"></div>
+  <div class="cube-face"></div>
+</div>
+
+<style>
+    .cube-spin-loader {
+  width: 52px;
+  height: 52px;
+  position: relative;
+  perspective: 200px;
+  margin: 2em auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cube-face {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border: 2.5px solid #3ea8ff;
+  box-sizing: border-box;
+  background: rgba(43, 149, 255, 0.1);
+  border-radius: 7px;
+  animation: cubeRotate 1.4s infinite ease-in-out;
+}
+.cube-face:nth-child(2) {
+  border-color: #2c50ff;
+  animation-delay: 0.23s;
+}
+.cube-face:nth-child(3) {
+  border-color: #19e8ff;
+  animation-delay: 0.46s;
+}
+@keyframes cubeRotate {
+  0% { transform: rotateY(0deg) rotateX(0deg);}
+  25% { transform: rotateY(25deg) rotateX(70deg);}
+  50% { transform: rotateY(110deg) rotateX(35deg);}
+  75% { transform: rotateY(260deg) rotateX(5deg);}
+  100% { transform: rotateY(360deg) rotateX(0deg);}
+}
+</style>

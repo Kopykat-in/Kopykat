@@ -1,0 +1,53 @@
+<div class="glass-slide-toggle">
+  <input type="checkbox" id="glass-toggle" hidden/>
+  <label for="glass-toggle" class="glass-switch">
+    <span class="toggle-knob"></span>
+  </label>
+</div>
+
+<style>
+    .glass-slide-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3em auto;
+}
+
+.glass-switch {
+  display: block;
+  width: 134px;
+  height: 56px;
+  border-radius: 18px;
+  background: linear-gradient(145deg,#e6ecee 10%,#cad0d6 60%,#f7fafc 100%);
+  box-shadow: 0 7px 20px #22314e3a, 0 1.5px 18px #dde9edbb inset;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.38s;
+  padding: 8px;
+}
+
+.toggle-knob {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 62px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(120deg,#deeefd 25%, #eafffc 70%);
+  box-shadow: 0 2px 12px #aed5e6aa;
+  transition: left 0.38s cubic-bezier(.65,.02,.46,1.1), background 0.34s;
+  border: 1.5px solid #b8cfd9bb;
+}
+
+#glass-toggle:checked + .glass-switch {
+  background: linear-gradient(145deg,#b4eeee 10%,#d4ffee 70%,#e5fff6 100%);
+  box-shadow: 0 16px 30px #12545833, 0 3px 24px #85ffe6cc inset;
+}
+
+#glass-toggle:checked + .glass-switch .toggle-knob {
+  left: 64px;
+  background: linear-gradient(120deg,#56fff2 10%,#b9f6f0 90%);
+  box-shadow: 0 2px 20px #87ffe7cc;
+  border: 1.5px solid #6bedeaff;
+}
+</style>

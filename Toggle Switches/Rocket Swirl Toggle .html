@@ -1,0 +1,44 @@
+<label class="rocket-swirl-toggle">
+  <input type="checkbox" />
+  <span class="track"></span>
+  <span class="knob"></span>
+</label>
+
+<style>
+    .rocket-swirl-toggle {
+  position: relative;
+  width: 6em;
+  height: 2.8em;
+  cursor: pointer;
+}
+.rocket-swirl-toggle input {
+  opacity: 0;
+  width: 0; height: 0;
+}
+.track {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #3851d8 0%, #f12583 100%);
+  border-radius: 1.4em;
+}
+.knob {
+  position: absolute;
+  width: 2.7em;
+  height: 2.7em;
+  background: #fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 0.1em;
+  transform: translateY(-50%);
+  box-shadow: 0 0 8px #f12583aa;
+  transition: left 0.3s ease;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23f12583" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2 16l6 6 1-4 4-4 -4-1 -6-6v6l5 2z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.rocket-swirl-toggle input:checked + .track + .knob {
+  left: 3.1em;
+}
+</style>

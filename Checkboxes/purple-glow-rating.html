@@ -1,0 +1,49 @@
+<div class="star-rating">
+  <input type="radio" id="star5" name="rating" value="5" />
+  <label for="star5"></label>
+  <input type="radio" id="star4" name="rating" value="4" />
+  <label for="star4"></label>
+  <input type="radio" id="star3" name="rating" value="3" />
+  <label for="star3"></label>
+  <input type="radio" id="star2" name="rating" value="2" />
+  <label for="star2"></label>
+  <input type="radio" id="star1" name="rating" value="1" />
+  <label for="star1"></label>
+</div>
+
+<style>
+    .star-rating {
+  display: inline-block;
+  direction: rtl;
+  font-size: 2.6em;
+  unicode-bidi: bidi-override;
+  text-align: center;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  color: #b0a7cc;
+  float: right;
+  cursor: pointer;
+  transition: color 0.23s;
+  position: relative;
+  margin: 0 2px;
+}
+
+.star-rating label::before {
+  content: "★";
+  color: inherit;
+  transition: color 0.23s;
+}
+
+/* When checked, color all previous stars */
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #8a2be2;
+  text-shadow: 0 3px 16px #cdbaff80;
+}
+</style>
