@@ -1,0 +1,23 @@
+<div class="dual-ring-loader"></div>
+
+<style>
+    .dual-ring-loader {
+  display: inline-block;
+  width: 3em;
+  height: 3em;
+}
+.dual-ring-loader::after {
+  content: " ";
+  display: block;
+  width: 2.5em;
+  height: 2.5em;
+  margin: 0.2em;
+  border-radius: 50%;
+  border: 0.3em solid #0ff;
+  border-color: #0ff transparent #0ff transparent;
+  animation: dualSpin 1.2s linear infinite;
+}
+@keyframes dualSpin {
+  to { transform: rotate(360deg); }
+}
+</style>

@@ -1,0 +1,38 @@
+<div class="floating-label-input">
+  <input type="text" required>
+  <label>Username</label>
+</div>
+
+<style>
+    .floating-label-input {
+  position: relative;
+  margin: 1em 0;
+}
+.floating-label-input input {
+  width: 15em;
+  padding: 0.8em;
+  font-size: 1em;
+  border: 0.1em solid #888;
+  border-radius: 0.4em;
+  background: transparent;
+  color: #fff;
+}
+.floating-label-input label {
+  position: absolute;
+  left: 0.8em;
+  top: 0.8em;
+  color: #aaa;
+  font-size: 1em;
+  transition: 0.3s;
+  pointer-events: none;
+}
+.floating-label-input input:focus + label,
+.floating-label-input input:valid + label {
+  top: -0.8em;
+  font-size: 0.8em;
+  color: #0ff;
+  background: #111;
+  padding: 0 0.3em;
+}
+
+</style>

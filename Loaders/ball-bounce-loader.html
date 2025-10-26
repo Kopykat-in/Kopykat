@@ -1,0 +1,80 @@
+<div class="bat-bounce-loader">
+  <div class="bat"></div>
+  <div class="ball"></div>
+</div>
+
+<style>
+    .bat-bounce-loader {
+  position: relative;
+  width: 240px;
+  height: 140px;
+  margin: 4em auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.bat {
+  position: absolute;
+  left: 50%;
+  bottom: 62px;
+  width: 180px;
+  height: 18px;
+  background: linear-gradient(135deg, #f4d29f 0%, #d19c5e 100%);
+  border-radius: 50px;
+  box-shadow: 0 3px 14px #6b543588;
+  transform: translateX(-50%) rotate(-18deg);
+  transform-origin: center center;
+  animation: batSwing 2.2s ease-in-out infinite;
+}
+
+@keyframes batSwing {
+  0%, 100% {
+    transform: translateX(-50%) rotate(-18deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(-24deg);
+  }
+}
+
+.ball {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle at 35% 30%, #fff 15%, #f5f5f5 85%);
+  border-radius: 50%;
+  box-shadow: 0 4px 18px #22222277, 
+    inset -2px -3px 8px #ddd;
+  left: calc(50% - 72px);
+  bottom: 58px;
+  animation: ballBounce 2.2s ease-in-out infinite;
+}
+
+@keyframes ballBounce {
+  0% {
+    left: calc(50% - 72px);
+    bottom: 58px;
+    transform: scale(1);
+  }
+  25% {
+    left: calc(50% - 35px);
+    bottom: 90px;
+    transform: scale(1.05);
+  }
+  50% {
+    left: calc(50%);
+    bottom: 62px;
+    transform: scale(0.97);
+  }
+  75% {
+    left: calc(50% + 42px);
+    bottom: 75px;
+    transform: scale(1.03);
+  }
+  100% {
+    left: calc(50% - 72px);
+    bottom: 58px;
+    transform: scale(1);
+  }
+}
+</style>

@@ -1,0 +1,65 @@
+<div class="newton-swing-loader">
+  <div class="ball ball1"></div>
+  <div class="ball ball2"></div>
+  <div class="ball ball3"></div>
+  <div class="ball ball4"></div>
+</div>
+
+<style>
+    .newton-swing-loader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+  height: 120px;
+  margin: 4em auto;
+  width: fit-content;
+}
+
+.ball {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #626976 0%, #393e47 100%);
+  box-shadow: 0 3px 12px #00000066, inset -2px -2px 6px #22222299;
+  position: relative;
+  animation-duration: 1.4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  transform-origin: center -60px;
+}
+
+.ball1 {
+  animation-name: swingLeft;
+}
+
+.ball2, .ball3 {
+  animation: none;
+}
+
+.ball4 {
+  animation-name: swingRight;
+}
+
+@keyframes swingLeft {
+  0%, 50%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-32deg);
+  }
+}
+
+@keyframes swingRight {
+  0%, 50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(32deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+</style>
