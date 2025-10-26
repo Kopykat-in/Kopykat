@@ -1,0 +1,115 @@
+<div class="ampm-toggle-wrapper">
+  <input type="checkbox" id="ampm-toggle" />
+  <label for="ampm-toggle" class="ampm-toggle">
+    <span class="icon sun"></span>
+    <span class="label-text">AM</span>
+    <span class="knob"></span>
+    <span class="icon moon"></span>
+    <span class="label-text">PM</span>
+  </label>
+</div>
+
+<style>
+    .ampm-toggle-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.ampm-toggle-wrapper input[type="checkbox"] {
+  display: none;
+}
+
+.ampm-toggle {
+  background: linear-gradient(90deg, #ffe259 0%, #ffa751 100%);
+  border-radius: 26px;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  height: 52px;
+  width: 140px;
+  position: relative;
+  box-shadow: 0 3px 16px #ffc36a55;
+  cursor: pointer;
+  transition: background 0.4s cubic-bezier(.43,.41,.22,1.13);
+  font-family: inherit;
+  font-size: 1.14em;
+}
+
+.ampm-toggle .icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 8px;
+}
+
+.ampm-toggle .sun {
+  background: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 8px #ffe25944;
+  position: relative;
+}
+.ampm-toggle .sun:before {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: #fff39b;
+  border-radius: 50%;
+}
+.ampm-toggle .moon {
+  background: none;
+  border-radius: 50%;
+  position: relative;
+}
+.ampm-toggle .moon:after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  margin-left: 4px;
+  box-shadow: -6px 0 0 0 #7765e3;
+}
+
+.ampm-toggle .label-text {
+  color: #ffb200;
+  margin: 0 4px;
+  font-weight: 500;
+  opacity: 1;
+  transition: color .4s, opacity .4s;
+}
+
+.ampm-toggle .knob {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #fffbb8 0%, #ffe073 100%);
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: 12px;
+  transition: left .4s cubic-bezier(.43,.41,.22,1.13), background .4s;
+  box-shadow: 0 1px 8px #ffe25988, 0 2px 1px #ffd74477;
+  z-index: 2;
+}
+
+.ampm-toggle-wrapper input[type="checkbox"]:checked + .ampm-toggle {
+  background: linear-gradient(90deg, #3626a7 0%, #6036cb 100%);
+}
+.ampm-toggle-wrapper input[type="checkbox"]:checked + .ampm-toggle .knob {
+  left: 88px;
+  background: linear-gradient(135deg, #a294df 0%, #524ca3 100%);
+}
+.ampm-toggle-wrapper input[type="checkbox"]:checked + .ampm-toggle .label-text:first-of-type {
+  color: #cab5fa;
+  opacity: 0.5;
+}
+.ampm-toggle-wrapper input[type="checkbox"]:checked + .ampm-toggle .label-text:last-of-type {
+  color: #ffb200;
+  opacity: 1;
+}
+</style>

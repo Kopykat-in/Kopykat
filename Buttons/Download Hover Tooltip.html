@@ -1,0 +1,124 @@
+<div data-tooltip="File size: 2.1MB" class="animated-btn">
+  <div class="btn-wrapper">
+    <div class="btn-text">Download Now</div>
+    <span class="btn-icon">
+      <svg viewBox="0 0 16 16" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 1v9.293l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7 10.293V1a.5.5 0 1 1 1 0zm-6 13.5A1.5 1.5 0 0 1 3.5 13h9a1.5 1.5 0 0 1 0 3h-9A1.5 1.5 0 0 1 2 13.5zm1.5.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z"/>
+      </svg>
+    </span>
+  </div>
+</div>
+
+<style>
+    .animated-btn {
+  --width: 120px;
+  --height: 38px;
+  --tooltip-height: 34px;
+  --tooltip-width: 108px;
+  --gap-between-tooltip-to-button: 18px;
+  --button-color: #2193b0;
+  --tooltip-color: #fff;
+  --gradient: linear-gradient(45deg, #2193b0 0%, #6dd5ed 100%);
+  width: var(--width);
+  height: var(--height);
+  background: var(--gradient);
+  position: relative;
+  text-align: center;
+  border-radius: 0.45em;
+  font-family: "Arial";
+  transition: background 0.4s;
+  overflow: hidden;
+}
+
+.animated-btn::before {
+  position: absolute;
+  content: attr(data-tooltip);
+  width: var(--tooltip-width);
+  height: var(--tooltip-height);
+  background-color: #222;
+  font-size: 0.88rem;
+  color: #fff;
+  border-radius: .25em;
+  line-height: var(--tooltip-height);
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+  left: calc(50% - var(--tooltip-width) / 2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  pointer-events: none;
+}
+
+.animated-btn::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: #222;
+  left: calc(50% - 10px);
+  bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  pointer-events: none;
+}
+
+.animated-btn:hover {
+  background: linear-gradient(45deg, #6dd5ed 0%, #2193b0 100%);
+}
+
+.btn-wrapper,.btn-text,.btn-icon {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: #fff;
+}
+
+.btn-text {
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: top 0.5s;
+}
+
+.btn-icon {
+  color: #fff;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: top 0.5s;
+}
+
+.btn-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.animated-btn:hover .btn-text {
+  top: -100%;
+}
+
+.animated-btn:hover .btn-icon {
+  top: 0;
+}
+
+.animated-btn:hover:before,
+.animated-btn:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.animated-btn:hover:after {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+}
+
+.animated-btn:hover:before {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+}
+</style>

@@ -1,0 +1,22 @@
+<button class="gradient-pulse-btn">Submit</button>
+
+<style>
+    .gradient-pulse-btn {
+  padding: 0.9em 2.2em;
+  background: linear-gradient(90deg,#ff6fae,#6fffcf,#3a99ff);
+  border: none;
+  border-radius: 2em;
+  color: #fff;
+  font-size: 1.2em;
+  animation: pulsebg 2s infinite alternate;
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+  box-shadow: 0 0 0.4em #6fffcf88;
+}
+@keyframes pulsebg {
+  to { box-shadow: 0 0 2em #3a99ff22; }
+}
+.gradient-pulse-btn:focus {
+  outline: 2px solid #fff;
+}
+</style>
