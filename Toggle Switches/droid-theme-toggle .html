@@ -1,0 +1,91 @@
+<label class="bb8-toggle">
+  <input class="bb8-toggle-checkbox" type="checkbox">
+  <div class="bb8-toggle-switch">
+    <div class="bb8">
+      <div class="bb8-body"></div>
+      <div class="bb8-head"></div>
+    </div>
+    <div class="bb8-shadow"></div>
+    <div class="bb8-bg"></div>
+  </div>
+</label>
+
+<style>
+    .bb8-toggle {
+  --toggle-size: 16px;
+  --toggle-width: 10.625em;
+  --toggle-height: 5.625em;
+  --bb8-diameter: 5em;
+  --toggle-bg: linear-gradient(#2c4770, #070e2b 35%, #6298ca 50% 79%, #a6c5d4 100%);
+  display: inline-block;
+  cursor: pointer;
+  font-size: 22px;
+}
+.bb8-toggle-checkbox {
+  display: none;
+}
+.bb8-toggle-switch {
+  position: relative;
+  width: var(--toggle-width);
+  height: var(--toggle-height);
+  background: #e8e8e8;
+  border-radius: 2.8em;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s;
+  box-shadow: 0 0.2em 1em 0 #070e2b11;
+}
+
+/* Droid background (day/night) */
+.bb8-bg {
+  position: absolute;
+  left: 0; top: 0; width: 100%; height: 100%;
+  border-radius: inherit;
+  background: var(--toggle-bg);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Droid shadow */
+.bb8-shadow {
+  position: absolute;
+  left: 1.44em; bottom: 1em;
+  width: 2.7em; height: 0.7em;
+  background: #cbb17344;
+  border-radius: 50%;
+  filter: blur(0.1em);
+  z-index: 1;
+  transition: left 0.3s;
+}
+
+/* BB-8 droid */
+.bb8 {
+  position: absolute;
+  left: 1.25em; top: 0.7em;
+  width: var(--bb8-diameter); height: var(--bb8-diameter);
+  z-index: 2;
+  transition: left 0.4s;
+}
+.bb8-body {
+  width: 100%; height: 100%; background: #fffbe8;
+  border-radius: 50%; border: 0.15em solid #d5a242;
+  box-shadow: 0 0.25em 1em #eee5a0;
+}
+.bb8-head {
+  position: absolute; left: 0.85em; top: -1.15em;
+  width: 3.3em; height: 1.55em; background: #eee;
+  border-radius: 2em 2em 1.5em 1.5em / 2.5em 2.5em 1.2em 1.2em;
+  border: 0.12em solid #d5a242;
+}
+
+/* Toggle Activated (move droid & shadow to right) */
+.bb8-toggle-checkbox:checked + .bb8-toggle-switch .bb8 {
+  left: calc(100% - var(--bb8-diameter) - 1.2em);
+}
+.bb8-toggle-checkbox:checked + .bb8-toggle-switch .bb8-shadow {
+  left: calc(100% - 3.14em);
+}
+.bb8-toggle-checkbox:checked + .bb8-toggle-switch .bb8-bg {
+  background: linear-gradient(#191651 60%, #56bee6 100%);
+}
+</style>
