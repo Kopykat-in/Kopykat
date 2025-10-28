@@ -1,0 +1,59 @@
+<div class="dial">
+  <label class="off">
+    <input checked="" name="fan-speed" type="radio" class="inputBox" />
+    <div class="button">OFF</div>
+  </label>
+  <label>
+    <input name="fan-speed" type="radio" class="inputBox" />
+    <div class="button">ON</div>
+  </label>
+</div>
+
+<style>
+    .dial {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.button {
+  width: 80px;
+  height: 40px;
+  background: #111;
+  color: #fff;
+  border: 2px solid #0f0;
+  box-shadow:
+    0 5px #0a0,
+    0 10px #050;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+.inputBox {
+  display: none;
+}
+/* Apply styles only when input is checked */
+.inputBox:checked + .button {
+  background: rgb(86, 235, 0);
+  color: #000;
+  box-shadow:
+    0 5px rgb(5, 153, 0),
+    0 10px rgb(17, 102, 0);
+  transform: translateY(2px);
+  border-color: rgb(144, 255, 144);
+}
+/* OFF button styling */
+.off .inputBox:checked + .button {
+  background: red;
+  box-shadow:
+    0 5px #900,
+    0 10px #600;
+  color: white;
+  border-color: rgb(255, 138, 138);
+}
+
+</style>
