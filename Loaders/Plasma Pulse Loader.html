@@ -1,0 +1,16 @@
+<div class="plasma-pulse-loader"></div>
+
+<style>
+    .plasma-pulse-loader {
+  width: 2.8em;
+  height: 2.8em;
+  border-radius: 50%;
+  background: radial-gradient(circle, #00ffc3 40%, transparent 60%);
+  animation: pulse 1s infinite ease-in-out;
+  box-shadow: 0 0 1.5em #00ffb3;
+}
+@keyframes pulse {
+  0%,100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.4); opacity: 1; }
+}
+</style>

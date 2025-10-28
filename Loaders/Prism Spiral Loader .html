@@ -1,0 +1,19 @@
+<div class="prism-spiral-loader"></div>
+
+<style>
+    .prism-spiral-loader {
+  width: 4em; height: 4em;
+  border: 0.6em solid transparent;
+  border-top: 0.6em solid #fd297b;
+  border-right: 0.6em solid #fdfc47;
+  border-bottom: 0.6em solid #00c6ff;
+  border-left: 0.6em solid #43e97b;
+  border-radius: 50%;
+  box-shadow: 0 0 24px #fd297b55, 0 0 38px #00c6ff22;
+  animation: spiralspin 1.4s cubic-bezier(0.77,0,0.175,1) infinite;
+}
+@keyframes spiralspin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+</style>

@@ -1,0 +1,72 @@
+<div class="golden-sand-timer-bg">
+  <div class="golden-sand-timer">
+    <div class="gst-curves"></div>
+    <div class="gst-cap-top"></div>
+    <div class="gst-glass-top"></div>
+    <div class="gst-sand"></div>
+    <div class="gst-sand-stream"></div>
+    <div class="gst-cap-bottom"></div>
+    <div class="gst-glass"></div>
+  </div>
+</div>
+
+<style>
+    .golden-sand-timer-bg {
+  background: #00000a;
+  height: 130px; width: 130px;
+  border-radius: 50%;
+  margin: 30px auto; position: relative;
+}
+.golden-sand-timer {
+  position: absolute; top: 30px; left: 40px;
+  width: 50px; height: 70px;
+  animation: gst-rotate 2s ease-in infinite;
+  transform-style: preserve-3d; perspective: 1000px;
+}
+@keyframes gst-rotate {
+  0%, 100% { transform: rotateX(0deg);}
+  50% { transform: rotateX(180deg);}
+}
+.gst-glass-top,
+.gst-glass { position: absolute; background: #999; border-radius: 50%;}
+.gst-glass-top {
+  top: -16px; left: 3px; width: 44px; height: 44px;
+}
+.gst-glass {
+  opacity: 0.5; top: 32px; left: 20px; width: 10px; height: 6px; perspective: 100px;
+}
+.gst-glass:before,
+.gst-glass:after {
+  content: ""; position: absolute; left: -17px; width: 44px; height: 28px; background: #999;
+}
+.gst-glass:before {top: -27px; border-radius: 0 0 25px 25px;}
+.gst-glass:after {bottom: -27px; border-radius: 25px 25px 0 0;}
+.gst-curves:before,
+.gst-curves:after {
+  content: ""; position: absolute; top: 32px; width: 6px; height: 6px; border-radius: 50%; background: #333;
+  animation: gst-hide-curves 2s ease-in infinite;
+}
+.gst-curves:before {left: 15px;}
+.gst-curves:after {left: 29px;}
+@keyframes gst-hide-curves {
+  0%,40%,100%{opacity:1;}
+  25%,30%{opacity:0;}
+}
+.gst-sand-stream:before {
+  content:""; position: absolute; left: 24px; width: 3px; background: #f4c542;
+  animation: gst-sand-str 2s ease-in infinite;
+}
+@keyframes gst-sand-str {
+  0%,50% {height:0; top:35px;}
+  60%,85% {height:35px; top:8px;}
+  100% {height:0; top:8px;}
+}
+.gst-sand:before {
+  content:""; position: absolute ; left: 6px; top: 8px; width: 39px;
+  border-radius: 3px 3px 30px 30px; background: #f4c542;
+  height: 17px; animation: gst-sand-fill 2s ease-in infinite;
+}
+@keyframes gst-sand-fill {
+  0%,60%{opacity:0;height:0;} 100%{opacity:1; height:17px;}
+}
+</style>

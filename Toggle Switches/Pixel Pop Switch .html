@@ -1,0 +1,31 @@
+<label class="pixel-pop-switch">
+  <input type="checkbox">
+  <span class="pixel-slider"></span>
+</label>
+
+<style>
+    .pixel-pop-switch {
+  width: 3.8em; height: 2em; position: relative; display: inline-block;
+}
+.pixel-pop-switch input { display: none; }
+.pixel-pop-switch .pixel-slider {
+  position: absolute; inset: 0;
+  background: #181e2e; border-radius: 1.3em;
+  box-shadow: 0 0 0.6em #42e2fa66; transition: background 0.25s;
+}
+.pixel-pop-switch .pixel-slider::after {
+  content: '';
+  position: absolute; top: 0.32em; left: 0.32em;
+  width: 1.2em; height: 1.2em; border-radius: 0.25em;
+  background: #06f7c5; transition: transform 0.35s;
+  box-shadow: 0 0 0.2em #06f7c5, 0 0 0.6em #fff0;
+}
+.pixel-pop-switch input:checked + .pixel-slider {
+  background: #f7c9e2;
+}
+.pixel-pop-switch input:checked + .pixel-slider::after {
+  transform: translateX(1.68em) rotate(17deg) scale(1.12);
+  background: #fe5da5;
+  box-shadow: 0 0 1.2em #fe5da5bb;
+}
+</style>

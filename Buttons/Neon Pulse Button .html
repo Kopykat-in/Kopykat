@@ -1,0 +1,26 @@
+<button class="neon-pulse-btn">Click Me</button>
+
+<style>
+    .neon-pulse-btn {
+  font-size: 1.2em;
+  padding: 0.8em 2em;
+  border: none;
+  border-radius: 2em;
+  background: #0ff;
+  color: #222;
+  box-shadow: 0 0 0.4em #0ff;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.3s, color 0.3s;
+  animation: pulse 1.5s infinite alternate;
+}
+.neon-pulse-btn:hover,
+.neon-pulse-btn:focus {
+  background: #222;
+  color: #0ff;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0.3em #0ff; }
+  100% { box-shadow: 0 0 1.2em #0ff; }
+}
+</style>

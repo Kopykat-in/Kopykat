@@ -1,0 +1,37 @@
+<label class="morph-pulse-switch">
+  <input type="checkbox">
+  <span class="morph-slider"></span>
+</label>
+
+<style>
+    .morph-pulse-switch {
+  width: 4.4em; height: 2.2em; position: relative; display: inline-block;
+}
+.morph-pulse-switch input { display: none; }
+.morph-pulse-switch .morph-slider {
+  position: absolute; inset: 0;
+  border-radius: 2em; background: #181f39;
+  box-shadow: 0 0 1.2em #4ff7f7aa;
+  transition: background 0.35s;
+  overflow: hidden;
+}
+.morph-pulse-switch .morph-slider::before {
+  content: '';
+  position: absolute; left: 0.25em; top: 0.18em;
+  width: 1.8em; height: 1.8em;
+  background: #fff; border-radius: 50%;
+  box-shadow: 0 0.1em 0.5em #4ff7f7aa;
+  transition: transform 0.42s cubic-bezier(.6,2,.3,1), background 0.25s;
+}
+.morph-pulse-switch input:checked + .morph-slider {
+  background: linear-gradient(90deg,#8ae8fd,#adffa3 60%,#faacee 100%);
+  animation: pulse-bg 1.4s alternate infinite;
+}
+.morph-pulse-switch input:checked + .morph-slider::before {
+  transform: translateX(2.1em) scale(1.11) rotate(-10deg);
+  background: #3fffde;
+}
+@keyframes pulse-bg {
+  50% {box-shadow: 0 0 2.5em #f1abff99;}
+}
+</style>
