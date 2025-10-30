@@ -1,0 +1,58 @@
+<!-- Prism Orb Loader -->
+<div class="prism-orb-loader"></div>
+
+<style>
+  .prism-orb-loader {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: repeating-conic-gradient(
+      #f6ff00 0deg 10deg,
+      #00e5ff 10deg 20deg,
+      #ff00ea 20deg 30deg,
+      #03ff62 30deg 40deg,
+      #e93f00 40deg 50deg,
+      #3efcff 50deg 60deg,
+      #ff5c51 60deg 70deg,
+      #4600ff 70deg 80deg,
+      #ffe600 80deg 90deg
+    );
+    position: relative;
+    box-shadow: 0 0 32px 10px #fff3, inset 0 0 18px 5px #fff5;
+    overflow: hidden;
+    animation: prism-rotate 2.5s linear infinite;
+  }
+
+  .prism-orb-loader::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: repeating-linear-gradient(
+      120deg,
+      transparent 0 10%,
+      #fff4 12% 13%,
+      transparent 15% 30%,
+      #fff2 33% 33.5%,
+      transparent 37% 50%
+    );
+    mix-blend-mode: screen;
+    pointer-events: none;
+  }
+
+  .prism-orb-loader::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 65% 20%, #fff, #fff0 70%);
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  @keyframes prism-rotate {
+    100% {
+      transform: rotateX(360deg) rotateY(360deg) rotate(360deg);
+    }
+  }
+</style>
